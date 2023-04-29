@@ -82,8 +82,8 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="411dp"
-        android:layout_height="60dp"
+        android:layout_width="454dp"
+        android:layout_height="87dp"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
@@ -96,13 +96,11 @@
         android:layout_width="189dp"
         android:layout_height="34dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
         android:text="@string/app_name"
         android:textColor="#F8F2F2"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
-
+        tools:layout_editor_absoluteY="43dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
