@@ -1,4 +1,4 @@
-package com.example.s10243052madpractical2;
+package com.example.madpractical;
 
 public class User {
     public String Name;

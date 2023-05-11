@@ -1,15 +1,14 @@
-package com.example.s10243052madpractical2;
+package com.example.madpractical;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.util.Scanner;
+import com.example.s10243052madpractical2.R;
 
 public class MainActivity extends AppCompatActivity {
     final String TITLE = "Main Activity";
