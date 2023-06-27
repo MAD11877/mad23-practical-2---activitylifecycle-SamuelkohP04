@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+//instantiates new user
         User myUser = new User();
         myUser.setName("Hello World!");
         myUser.setDescription("Hi this represents a long text. \n" +
