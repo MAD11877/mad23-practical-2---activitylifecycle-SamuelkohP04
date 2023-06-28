@@ -2,4 +2,5 @@
     <string name="app_name">MADPractical</string>
     <string name="btn1">Follow</string>
     <string name="btn2">Message</string>
+    <string name="message"></string>
 </resources>

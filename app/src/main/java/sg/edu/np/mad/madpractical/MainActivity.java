@@ -1,14 +1,17 @@
 package sg.edu.np.mad.madpractical;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.s10243052madpractical2.R;
+import com.thedeanda.lorem.Lorem;
+import com.thedeanda.lorem.LoremIpsum;
 
 public class MainActivity extends AppCompatActivity {
     final String TITLE = "Main Activity";
@@ -18,12 +21,24 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//instantiates new user
+
+        Toolbar toolbar = findViewById(R.id.mytoolbar);
+        setSupportActionBar(toolbar);
+        // Set the title text color to white
+        toolbar.setTitleTextColor(Color.WHITE);
+
         User myUser = new User();
         myUser.setName("Hello World!");
-        myUser.setDescription("Hi this represents a long text. \n" +
-                "Tomorrow is the day after two yesterdays.\n " +
-                "At the end of the day, it's night. \n");
+        // Create an instance of the LoremIpsum class
+        Lorem lorem = LoremIpsum.getInstance();
+
+        // Generate a paragraph of Lorem Ipsum text
+        String paragraph = lorem.getParagraphs(1, 1);
+
+        // Display the generated text
+        TextView textView = findViewById(R.id.textView2);
+
+        myUser.setDescription(paragraph);
         myUser.setId(R.id.textView3); //setId refers to the id of "Hello World" in bold.
         myUser.setFollowed(false);
 
@@ -46,63 +61,9 @@ public class MainActivity extends AppCompatActivity {
                 else { myButton.setText("Follow"); }
             }
         });
+
+
+
         Log.v(TITLE, "On Create!");
     }
-
-
-    @Override
-    protected void onStart(){
-        super.onStart();
-        Log.v(TITLE, "On Start!");
-    }
-
-    @Override
-    protected void onResume(){
-        super.onResume();
-        Log.v(TITLE,"On Resume!");
-
-        User myUser = new User();
-        myUser.getName();
-
-        Button myButton = findViewById(R.id.button);
-        myButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                hasFollowed = !hasFollowed;
-                Log.v(TITLE, "Follow button is pressed");
-
-                //Log.v(TITLE, String.valueOf(hasFollowed));
-                if (!hasFollowed) { myButton.setText("Unfollow");}
-                else { myButton.setText("Follow"); }
-            }
-        });
-
-        Button myButton2 = findViewById(R.id.button2);
-        myButton2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.v(TITLE, "Message button is pressed");
-            }
-        });
-    }
-
-    @Override
-    protected void onStop(){
-        super.onStop();
-        Log.v(TITLE, "On Stop!");
-    }
-
-    @Override
-    protected void onPause(){
-        super.onPause();
-        Log.v(TITLE,"On Pause!");
-    }
-
-    @Override
-    protected void onDestroy(){
-        super.onDestroy();
-        Log.v(TITLE, "On Destroy");
-    }
-
 }

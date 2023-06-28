@@ -1,4 +1,4 @@
-package com.example.madpractical;
+package sg.edu.np.mad.madpractical;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.example.s10243052madpractical2", appContext.getPackageName());
+        assertEquals("sg.edu.np.mad.madpractical", appContext.getPackageName());
     }
 }
